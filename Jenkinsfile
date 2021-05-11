@@ -12,16 +12,7 @@ pipeline {
                 }
             }
         }
-        stage("Build and start") {
-            steps {
-		script{
-		sh "docker-composer build"
-                sh "docker-compose up -d"
-                waitUntilServicesReady
-                
-                }
-            }
-	}  
+        
         }
 }
         
