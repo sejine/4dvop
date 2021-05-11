@@ -1,9 +1,10 @@
 pipeline {
     agent any
   
-        stage("build") {
-            steps {
-                script {
+	stages{
+		stage("build") {
+                   steps {
+                    script {
                     sh "docker build ./simple_api/."
 		    sh "docker images"
 		    sh "docker image ls"
@@ -20,7 +21,7 @@ pipeline {
                 
                 }
             }
-            
+	}  
         }
 }
         
